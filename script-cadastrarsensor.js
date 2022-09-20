@@ -17,7 +17,17 @@ form.addEventListener("submit", (e) => {
     } else if (isNaN(idDispositivo) || isNaN(idSensor)) {
         alert("ID do Dispositivo e ID do Sensor precisam ser números!")
     } else {
-        fetch('http://localhost:3000/sensores')
-            .then(response => response.json());
+        fetch('http://localhost:3000/sensores', {
+            method: 'post',
+            body: JSON.stringify ({
+                idDispositivo, idSensor, empresa, grandeza
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then(response => alert(response.mensagem))
+            .catch(erro => alert(erro.mensagem))
     }
 });
