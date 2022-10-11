@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,28 @@
     <title>Solicitar Dados</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 
 <body>
     <form class="form">
         <div class="solicitardados_titulo">
             SOLICITAR <br>DADOS
-        </div>  
-            
+        </div>
+
         <div class="form-field">
             <label>ID do Dispositivo:</label>
-            <input type="text" autocomplete="off" name="idDispositivo">
+            <input type="text" autocomplete="off" name="idDispositivo" required>
         </div>
 
         <div class="form-field">
             <label>Data Inicial:</label>
-            <input type="date" name="dtInicial">
+            <input type="date" name="dtInicial" required>
         </div>
 
         <div class="form-field">
             <label>Data Final:</label>
-            <input type="date" name="dtFinal">
+            <input type="date" name="dtFinal" required>
         </div>
 
         <div class="center-buttons bg-container-buttons">
@@ -39,17 +41,17 @@
     </form>
 
     <div>
-        <table class="central-table">
+        <table class="central-table" style="display: none">
             <thead>
                 <tr>
                     <th>ID SENSOR</th>
-                    <th>DATA</th>
+                    <th>DATA E HORA</th>
                     <th>VALOR</th>
                     <th>GRANDEZA</th>
                 </tr>
             </thead>
             <tbody class="js-body">
-                
+
             </tbody>
         </table>
     </div>
@@ -57,4 +59,5 @@
     <script src="script-solicitardados.js">
     </script>
 </body>
+
 </html>
