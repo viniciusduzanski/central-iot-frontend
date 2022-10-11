@@ -1,4 +1,8 @@
 const form = document.querySelector("form");
+const button = document.querySelectorAll("button")[1];
+const inputIdDispositivo = document.querySelector("[name=idDispositivo]");
+const inputDataInicial = document.querySelector("[name=dtInicial]");
+const inputDataFinal = document.querySelector("[name=dtFinal]");
 
 let idDispositivo;
 let dtInicial;
@@ -29,6 +33,33 @@ form.addEventListener("submit", (e) => {
             .then(response => montTable(response))
     }
 });
+
+button.addEventListener("click", () => {
+    const idDispositivo1 = inputIdDispositivo.value.trim();
+    let dtInicial1 = inputDataInicial.value;
+    let dtFinal1 = inputDataFinal.value;
+
+    const d1 = new Date(dtInicial1);
+    const d2 = new Date(dtFinal1);
+
+    if (d1 > d2) {
+        alert("A data inicial não pode ser maior que a data final.")
+    } else {
+        dtInicial1 += " 00:00:00";
+        dtFinal1 += " 23:59:59";
+
+        fetch('http://localhost:3000/dados?' + new URLSearchParams({
+            idDispositivo: idDispositivo1, dtInicial: dtInicial1, dtFinal: dtFinal1
+        }))
+            .then(response => response.json())
+            .then(response => {
+                const formatador = new json2csv.Parser(response);
+                const csv = formatador.parse(response);
+                const instrucao = "data:text/csv;charset=utf-8,";
+                window.open(instrucao + csv);
+            })
+    }
+})
 
 function montTable(dado) {
     table.style = "display: table";
