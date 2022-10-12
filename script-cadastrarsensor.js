@@ -15,7 +15,7 @@ form.addEventListener("submit", (e) => {
     } else if (isNaN(idDispositivo) || isNaN(idSensor)) {
         alert("ID do Dispositivo e ID do Sensor precisam ser números!")
     } else {
-        fetch('http://localhost:3000/sensores', {
+        fetch('https://central-iot.herokuapp.com/sensores', {
             method: 'post',
             body: JSON.stringify ({
                 idDispositivo, idSensor, empresa
