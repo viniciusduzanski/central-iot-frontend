@@ -169,6 +169,24 @@ a.btn{
 
 .central-table{
     text-align: center;
-    margin-left: 790px;
+    margin-left: 730px;
+    
+}
+
+table, th, td {
     border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 5px 2px;
+}
+
+th {
+    background-color: #42b49f;
+    color: white;
+    font-weight: bold;
+    padding: 15px 15px;
+}
+
+td {
+    background-color: white;
+    font-weight: bold;
 }
