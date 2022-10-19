@@ -169,9 +169,15 @@ a.btn{
 
 .central-table{
     text-align: center;
-    margin-left: 730px;
-    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 700px;
 }
+
 
 table, th, td {
     border: 1px solid #000;
@@ -189,4 +195,52 @@ th {
 td {
     background-color: white;
     font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+    .form-field{
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .form-field > label{
+        text-align: initial;
+    }
+
+    .central-iot-login{
+        margin-left: 15px;
+    }
+    
+    .bg-azul-login{
+        margin-left: -8px;
+    }
+
+    .center-buttons{
+        column-gap: 15px;
+    }
+
+    a.btn{
+        max-width: 140px;
+    }
+
+    .cadastrarsensor_titulo{
+        margin-left: 0px;
+    }
+
+    .bg-azul-cadastrar{
+        margin-left: 0px;
+    }
+
+    .solicitardados_titulo{
+        margin-left: 0px;
+    }
+
+    .bg-container-buttons{
+        margin-left: -50px;
+    }
+
+    .central-table{
+        margin-left: 24px;
+    }
+
 }
