@@ -63,9 +63,13 @@ button.addEventListener("click", () => {
 
 function montTable(dado) {
     table.style = "display: table";
+    let dadoCresc = dado.sort(function(a,b)
+    {
+        return a - b;
+    });
     if (dado.length > 0) {
         let row = "";
-        dado.forEach(dado => {
+        dadoCresc.forEach(dado => {
             row += `
             <tr>
                 <td>${dado.id_sensor}</td>
