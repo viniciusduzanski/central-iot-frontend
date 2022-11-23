@@ -65,7 +65,9 @@ function montTable(dado) {
     table.style = "display: table";
     let dadoCresc = dado.sort(function(a,b)
     {
-        return a - b;
+        if (a.data_hora < b.data_hora) return -1;
+        if (a.data_hora > b.data_hora) return 1;
+        return 0;
     });
     if (dado.length > 0) {
         let row = "";
