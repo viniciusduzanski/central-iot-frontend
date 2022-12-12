@@ -8,7 +8,7 @@ form.addEventListener("submit", (e)=>{
     e.preventDefault();
     usuario = e.target.usuario.value;
     senha = e.target.senha.value;
-    fetch('https://central-iot.herokuapp.com/')
+    fetch('https://centraliotbackend.onrender.com/')
     .then(response => response.json())
     .then(users => checkUser(users));
 })

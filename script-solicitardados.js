@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
         dtInicial += " 00:00:00";
         dtFinal += " 23:59:59";
 
-        fetch('https://central-iot.herokuapp.com/dados?' + new URLSearchParams({
+        fetch('https://centraliotbackend.onrender.com/dados?' + new URLSearchParams({
             idDispositivo, dtInicial, dtFinal
         }))
             .then(response => response.json())
@@ -48,7 +48,7 @@ button.addEventListener("click", () => {
         dtInicial1 += " 00:00:00";
         dtFinal1 += " 23:59:59";
 
-        fetch('https://central-iot.herokuapp.com/dados?' + new URLSearchParams({
+        fetch('https://centraliotbackend.onrender.com/dados?' + new URLSearchParams({
             idDispositivo: idDispositivo1, dtInicial: dtInicial1, dtFinal: dtFinal1
         }))
             .then(response => response.json())
